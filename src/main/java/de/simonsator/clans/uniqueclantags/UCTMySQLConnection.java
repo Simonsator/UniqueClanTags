@@ -13,7 +13,7 @@ public class UCTMySQLConnection extends SQLCommunication {
 	private final String TABLE_PREFIX;
 
 	public UCTMySQLConnection(MySQLData pMySQLData) {
-		super(pMySQLData.DATABASE, "jdbc:mysql://" + pMySQLData.HOST + ":" + pMySQLData.PORT, pMySQLData.USERNAME, pMySQLData.PASSWORD);
+		super(pMySQLData);
 		this.TABLE_PREFIX = pMySQLData.TABLE_PREFIX;
 	}
 
@@ -21,8 +21,9 @@ public class UCTMySQLConnection extends SQLCommunication {
 		Connection con = getConnection();
 		ResultSet rs = null;
 		Statement stmt = null;
+		PreparedStatement prepStmt = null;
 		try {
-			PreparedStatement prepStmt = con
+			prepStmt = con
 					.prepareStatement("select id from " + DATABASE + ".`" + TABLE_PREFIX + "clan` WHERE clan_tag=? LIMIT 1");
 			prepStmt.setString(1, pClanTag);
 			rs = prepStmt.executeQuery();
@@ -31,7 +32,7 @@ public class UCTMySQLConnection extends SQLCommunication {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close(rs, stmt);
+			close(rs, stmt, prepStmt);
 		}
 		return false;
 	}
