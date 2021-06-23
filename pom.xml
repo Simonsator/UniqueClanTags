@@ -6,7 +6,10 @@
 
 	<groupId>de.simonsator</groupId>
 	<artifactId>Unique-Clan-Tags</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>

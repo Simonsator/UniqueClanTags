@@ -22,12 +22,13 @@ public class UCTMain extends PAFExtension implements Listener {
 	@Override
 	public void onEnable() {
 		try {
-			con = new UCTMySQLConnection(new MySQLData(Main.getInstance().getGeneralConfig().getString("MySQL.Host"),
-					Main.getInstance().getGeneralConfig().getString("MySQL.Username"), Main.getInstance().getGeneralConfig().getString("MySQL.Password"),
-					Main.getInstance().getGeneralConfig().getInt("MySQL.Port"), Main.getInstance().getGeneralConfig().getString("MySQL.Database"),
-					Main.getInstance().getGeneralConfig().getString("MySQL.TablePrefix")));
+			con = new UCTMySQLConnection(new MySQLData(Main.getInstance().getGeneralConfig().get("MySQL.Host").toString(),
+					Main.getInstance().getGeneralConfig().get("MySQL.Username").toString(), Main.getInstance().getGeneralConfig().get("MySQL.Password").toString(),
+					Main.getInstance().getGeneralConfig().getInt("MySQL.Port"), Main.getInstance().getGeneralConfig().get("MySQL.Database").toString(),
+					Main.getInstance().getGeneralConfig().get("MySQL.TablePrefix").toString(), Main.getInstance().getGeneralConfig().getBoolean("MySQL.UseSSL"), Main.getInstance().getGeneralConfig().getBoolean("MySQL.Cache")));
 			message = ClanCommands.getInstance().getPrefix() + (new UCTConfiguration(new File(getConfigFolder(), "config.yml"), this)).getString("Messages.ClanTagDoesAlreadyExist");
 			getAdapter().registerListener(this, this);
+			registerAsExtension();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
