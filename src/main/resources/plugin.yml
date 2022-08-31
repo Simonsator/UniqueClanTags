@@ -2,5 +2,7 @@ name: UniqueClanTags
 version: ${project.version}
 author: Simonsator
 depends: [Clans]
+depend: [ Clans ]
 main: de.simonsator.clans.uniqueclantags.UCTMain
 description: Makes clan tags unique.
+api-version: 1.13
