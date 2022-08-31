@@ -37,20 +37,20 @@
 		</repository>
 		<repository>
 			<id>simonsators-repo</id>
-			<url>http://simonsator.de/repo</url>
+			<url>https://simonsator.de/repo</url>
 		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>de.simonsator</groupId>
 			<artifactId>Clans</artifactId>
-			<version>0.9.9.17</version>
+			<version>0.9.9.34</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>de.simonsator</groupId>
 			<artifactId>BungeecordPartyAndFriends</artifactId>
-			<version>1.0.79</version>
+			<version>1.0.89</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
