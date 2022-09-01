@@ -6,8 +6,8 @@ import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
 
-public class UTCBungeeListener extends UTCGeneralListener implements Listener {
-	public UTCBungeeListener(UCTMySQLConnection connection, TextComponent pMessage) {
+public class UCTBungeeListener extends UCTGeneralListener implements Listener {
+	public UCTBungeeListener(UCTMySQLConnection connection, TextComponent pMessage) {
 		super(connection, pMessage);
 	}
 

@@ -1,6 +1,6 @@
 package de.simonsator.clans.uniqueclantags;
 
-import de.simonsator.clans.uniqueclantags.listeners.UTCBungeeListener;
+import de.simonsator.clans.uniqueclantags.listeners.UCTBungeeListener;
 import de.simonsator.partyandfriends.api.PAFExtension;
 import de.simonsator.partyandfriends.clan.commands.ClanCommands;
 import de.simonsator.partyandfriends.communication.sql.MySQLData;
@@ -29,7 +29,7 @@ public class UCTMain extends PAFExtension {
 			Object listener;
 			switch (getAdapter().getServerSoftware()) {
 				case BUNGEECORD:
-					listener = new UTCBungeeListener(con, message);
+					listener = new UCTBungeeListener(con, message);
 					break;
 				case SPIGOT:
 					throw new IllegalArgumentException(getAdapter().getServerSoftware() + " is not supported!");

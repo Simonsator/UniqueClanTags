@@ -4,11 +4,11 @@ import de.simonsator.clans.uniqueclantags.UCTMySQLConnection;
 import de.simonsator.partyandfriends.clan.api.events.ClanTagSetEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 
-public class UTCGeneralListener {
+public class UCTGeneralListener {
 	private final UCTMySQLConnection CONNECTION;
 	private final TextComponent MESSAGE;
 
-	protected UTCGeneralListener(UCTMySQLConnection connection, TextComponent pMessage) {
+	protected UCTGeneralListener(UCTMySQLConnection connection, TextComponent pMessage) {
 		CONNECTION = connection;
 		MESSAGE = pMessage;
 	}
