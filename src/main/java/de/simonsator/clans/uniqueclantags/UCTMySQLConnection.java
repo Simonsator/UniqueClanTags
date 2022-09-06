@@ -35,7 +35,7 @@ public class UCTMySQLConnection extends PoolSQLCommunication {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			close(rs, prepStmt);
+			close(con, rs, prepStmt);
 		}
 		return false;
 	}
