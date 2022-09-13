@@ -11,10 +11,10 @@ import de.simonsator.partyandfriends.velocity.main.PAFPlugin;
 
 import java.nio.file.Path;
 
-@Plugin(id = "UniqueClanTags", name = "uniqueclantags", version = "1.0.3-RELEASE",
+@Plugin(id = "uniqueclantags", name = "UniqueClanTags", version = "1.0.3-RELEASE",
 		url = "https://www.spigotmc.org/resources/unique-clan-tags-extension-for-clans.33904/",
 		description = "Makes clan tags unique."
-		, authors = {"JT122406", "Simonsator"}, dependencies = {@Dependency(id = "partyandfriends"), @Dependency(id = "clans")})
+		, authors = {"JT122406", "Simonsator"}, dependencies = {@Dependency(id = "clans"), @Dependency(id = "partyandfriends")})
 public class UCTLoader {
 	private final Path folder;
 
