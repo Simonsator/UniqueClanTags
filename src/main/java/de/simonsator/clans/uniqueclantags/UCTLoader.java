@@ -14,7 +14,7 @@ import java.nio.file.Path;
 @Plugin(id = "uniqueclantags", name = "UniqueClanTags", version = "1.0.3-RELEASE",
 		url = "https://www.spigotmc.org/resources/unique-clan-tags-extension-for-clans.33904/",
 		description = "Makes clan tags unique."
-		, authors = {"JT122406", "Simonsator"}, dependencies = {@Dependency(id = "clans"), @Dependency(id = "partyandfriends")})
+		, authors = {"JT122406", "Simonsator"}, dependencies = {@Dependency(id = "clans-loader"), @Dependency(id = "partyandfriends")})
 public class UCTLoader {
 	private final Path folder;
 
