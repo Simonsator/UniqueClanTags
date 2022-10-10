@@ -1,4 +1,4 @@
-package de.simonsator.clans.uniqueclantags;
+package de.simonsator.velocity.clans.uniqueclantags;
 
 import de.simonsator.partyandfriends.velocity.communication.sql.MySQLData;
 import de.simonsator.partyandfriends.velocity.communication.sql.pool.PoolData;

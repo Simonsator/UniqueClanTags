@@ -1,6 +1,6 @@
-package de.simonsator.clans.uniqueclantags.listeners;
+package de.simonsator.velocity.clans.uniqueclantags.listeners;
 
-import de.simonsator.clans.uniqueclantags.UCTMySQLConnection;
+import de.simonsator.velocity.clans.uniqueclantags.UCTMySQLConnection;
 import de.simonsator.partyandfriends.velocity.clan.api.events.ClanTagSetEvent;
 import net.kyori.adventure.text.TextComponent;
 

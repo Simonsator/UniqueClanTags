@@ -1,4 +1,4 @@
-package de.simonsator.clans.uniqueclantags;
+package de.simonsator.velocity.clans.uniqueclantags;
 
 import com.google.inject.Inject;
 import com.velocitypowered.api.event.Subscribe;

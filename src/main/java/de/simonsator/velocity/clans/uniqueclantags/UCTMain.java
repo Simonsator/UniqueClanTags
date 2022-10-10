@@ -1,6 +1,6 @@
-package de.simonsator.clans.uniqueclantags;
+package de.simonsator.velocity.clans.uniqueclantags;
 
-import de.simonsator.clans.uniqueclantags.listeners.UCTBungeeListener;
+import de.simonsator.velocity.clans.uniqueclantags.listeners.UCTBungeeListener;
 import de.simonsator.partyandfriends.velocity.api.PAFExtension;
 import de.simonsator.partyandfriends.velocity.clan.commands.ClanCommands;
 import de.simonsator.partyandfriends.velocity.communication.sql.MySQLData;

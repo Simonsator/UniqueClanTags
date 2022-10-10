@@ -1,4 +1,4 @@
-package de.simonsator.clans.uniqueclantags;
+package de.simonsator.velocity.clans.uniqueclantags;
 
 import de.simonsator.partyandfriends.velocity.api.PAFExtension;
 import de.simonsator.partyandfriends.velocity.utilities.ConfigurationCreator;
