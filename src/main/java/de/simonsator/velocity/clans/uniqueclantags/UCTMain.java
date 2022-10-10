@@ -1,6 +1,7 @@
 package de.simonsator.velocity.clans.uniqueclantags;
 
-import de.simonsator.velocity.clans.uniqueclantags.listeners.UCTBungeeListener;
+import de.simonsator.partyandfriends.velocity.api.adapter.ServerSoftware;
+import de.simonsator.velocity.clans.uniqueclantags.listeners.UCTVelocityListener;
 import de.simonsator.partyandfriends.velocity.api.PAFExtension;
 import de.simonsator.partyandfriends.velocity.clan.commands.ClanCommands;
 import de.simonsator.partyandfriends.velocity.communication.sql.MySQLData;
@@ -33,15 +34,7 @@ public class UCTMain extends PAFExtension {
 			UCTMySQLConnection con = new UCTMySQLConnection(mySQLData, poolData);
 			TextComponent message = Component.text(ClanCommands.getInstance().getPrefix() + (new UCTConfiguration(new File(getConfigFolder(), "config.yml"), this)).getString("Messages.ClanTagDoesAlreadyExist"));
 			Object listener;
-			switch (getAdapter().getServerSoftware()) {
-				case BUNGEECORD:
-					listener = new UCTBungeeListener(con, message);
-					break;
-				case SPIGOT:
-					throw new IllegalArgumentException(getAdapter().getServerSoftware() + " is not supported!");
-				default:
-					throw new IllegalArgumentException("Unknown server software: " + getAdapter().getServerSoftware());
-			}
+			listener = new UCTVelocityListener(con, message);
 			getAdapter().registerListener(listener, this);
 			registerAsExtension();
 		} catch (IOException | SQLException e) {

@@ -6,8 +6,8 @@ import de.simonsator.partyandfriends.velocity.clan.api.events.ClanTagSetEvent;
 import net.kyori.adventure.text.TextComponent;
 
 
-public class UCTBungeeListener extends UCTGeneralListener {
-	public UCTBungeeListener(UCTMySQLConnection connection, TextComponent pMessage) {
+public class UCTVelocityListener extends UCTGeneralListener {
+	public UCTVelocityListener(UCTMySQLConnection connection, TextComponent pMessage) {
 		super(connection, pMessage);
 	}
 
