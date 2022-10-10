@@ -1,8 +1,8 @@
 package de.simonsator.clans.uniqueclantags;
 
-import de.simonsator.partyandfriends.communication.sql.MySQLData;
-import de.simonsator.partyandfriends.communication.sql.pool.PoolData;
-import de.simonsator.partyandfriends.communication.sql.pool.PoolSQLCommunication;
+import de.simonsator.partyandfriends.velocity.communication.sql.MySQLData;
+import de.simonsator.partyandfriends.velocity.communication.sql.pool.PoolData;
+import de.simonsator.partyandfriends.velocity.communication.sql.pool.PoolSQLCommunication;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

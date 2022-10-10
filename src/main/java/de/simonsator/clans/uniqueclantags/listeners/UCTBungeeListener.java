@@ -1,17 +1,17 @@
 package de.simonsator.clans.uniqueclantags.listeners;
 
+import com.velocitypowered.api.event.Subscribe;
 import de.simonsator.clans.uniqueclantags.UCTMySQLConnection;
-import de.simonsator.partyandfriends.clan.api.events.ClanTagSetEvent;
-import net.md_5.bungee.api.chat.TextComponent;
-import net.md_5.bungee.api.plugin.Listener;
-import net.md_5.bungee.event.EventHandler;
+import de.simonsator.partyandfriends.velocity.clan.api.events.ClanTagSetEvent;
+import net.kyori.adventure.text.TextComponent;
 
-public class UCTBungeeListener extends UCTGeneralListener implements Listener {
+
+public class UCTBungeeListener extends UCTGeneralListener {
 	public UCTBungeeListener(UCTMySQLConnection connection, TextComponent pMessage) {
 		super(connection, pMessage);
 	}
 
-	@EventHandler
+	@Subscribe
 	public void onClanTagSet(ClanTagSetEvent pEvent) {
 		super.onClanTagSet(pEvent);
 	}

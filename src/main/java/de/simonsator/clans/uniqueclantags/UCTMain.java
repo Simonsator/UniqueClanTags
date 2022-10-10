@@ -1,18 +1,24 @@
 package de.simonsator.clans.uniqueclantags;
 
 import de.simonsator.clans.uniqueclantags.listeners.UCTBungeeListener;
-import de.simonsator.partyandfriends.api.PAFExtension;
-import de.simonsator.partyandfriends.clan.commands.ClanCommands;
-import de.simonsator.partyandfriends.communication.sql.MySQLData;
-import de.simonsator.partyandfriends.communication.sql.pool.PoolData;
-import de.simonsator.partyandfriends.main.Main;
-import net.md_5.bungee.api.chat.TextComponent;
+import de.simonsator.partyandfriends.velocity.api.PAFExtension;
+import de.simonsator.partyandfriends.velocity.clan.commands.ClanCommands;
+import de.simonsator.partyandfriends.velocity.communication.sql.MySQLData;
+import de.simonsator.partyandfriends.velocity.communication.sql.pool.PoolData;
+import de.simonsator.partyandfriends.velocity.main.Main;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.TextComponent;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.sql.SQLException;
 
 public class UCTMain extends PAFExtension {
+
+	public UCTMain(Path folder) {
+		super(folder);
+	}
 
 	@Override
 	public void onEnable() {
@@ -25,7 +31,7 @@ public class UCTMain extends PAFExtension {
 					Main.getInstance().getGeneralConfig().getInt("MySQL.Port"), Main.getInstance().getGeneralConfig().getString("MySQL.Database"),
 					Main.getInstance().getGeneralConfig().getString("MySQL.TablePrefix"), Main.getInstance().getGeneralConfig().getBoolean("MySQL.UseSSL"));
 			UCTMySQLConnection con = new UCTMySQLConnection(mySQLData, poolData);
-			TextComponent message = new TextComponent(TextComponent.fromLegacyText(ClanCommands.getInstance().getPrefix() + (new UCTConfiguration(new File(getConfigFolder(), "config.yml"), this)).getString("Messages.ClanTagDoesAlreadyExist")));
+			TextComponent message = Component.text(ClanCommands.getInstance().getPrefix() + (new UCTConfiguration(new File(getConfigFolder(), "config.yml"), this)).getString("Messages.ClanTagDoesAlreadyExist"));
 			Object listener;
 			switch (getAdapter().getServerSoftware()) {
 				case BUNGEECORD:
@@ -41,6 +47,11 @@ public class UCTMain extends PAFExtension {
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public String getName() {
+		return "UniqueClanTags";
 	}
 
 }
