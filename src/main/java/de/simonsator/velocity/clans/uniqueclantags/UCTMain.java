@@ -1,14 +1,13 @@
 package de.simonsator.velocity.clans.uniqueclantags;
 
-import de.simonsator.partyandfriends.velocity.api.adapter.ServerSoftware;
 import de.simonsator.velocity.clans.uniqueclantags.listeners.UCTVelocityListener;
 import de.simonsator.partyandfriends.velocity.api.PAFExtension;
 import de.simonsator.partyandfriends.velocity.clan.commands.ClanCommands;
 import de.simonsator.partyandfriends.velocity.communication.sql.MySQLData;
 import de.simonsator.partyandfriends.velocity.communication.sql.pool.PoolData;
 import de.simonsator.partyandfriends.velocity.main.Main;
-import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +31,7 @@ public class UCTMain extends PAFExtension {
 					Main.getInstance().getGeneralConfig().getInt("MySQL.Port"), Main.getInstance().getGeneralConfig().getString("MySQL.Database"),
 					Main.getInstance().getGeneralConfig().getString("MySQL.TablePrefix"), Main.getInstance().getGeneralConfig().getBoolean("MySQL.UseSSL"));
 			UCTMySQLConnection con = new UCTMySQLConnection(mySQLData, poolData);
-			TextComponent message = Component.text(ClanCommands.getInstance().getPrefix() + (new UCTConfiguration(new File(getConfigFolder(), "config.yml"), this)).getString("Messages.ClanTagDoesAlreadyExist"));
+			TextComponent message = LegacyComponentSerializer.legacyAmpersand().deserialize(ClanCommands.getInstance().getPrefix() + (new UCTConfiguration(new File(getConfigFolder(), "config.yml"), this)).getString("Messages.ClanTagDoesAlreadyExist"));
 			Object listener;
 			listener = new UCTVelocityListener(con, message);
 			getAdapter().registerListener(listener, this);
