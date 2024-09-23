@@ -6,7 +6,7 @@
 
 	<groupId>de.simonsator</groupId>
 	<artifactId>Unique-Clan-Tags</artifactId>
-	<version>1.0.4-RELEASE</version>
+	<version>1.0.5-RELEASE</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -83,7 +83,7 @@
 		<dependency>
 			<groupId>de.simonsator</groupId>
 			<artifactId>Unique-Clan-Tags-Velocity</artifactId>
-			<version>1.0.4-RELEASE</version>
+			<version>1.0.5-RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>de.simonsator</groupId>
